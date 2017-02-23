@@ -1,0 +1,38 @@
+{
+  "name": "antd-mobile-ssr",
+  "version": "1.0.0-beta.0",
+  "description": "基于 React 的移动设计规范实现，SSR 优化版。",
+  "homepage": "http://mobile.ant.design",
+  "keywords": [
+    "ant",
+    "design",
+    "react",
+    "react-component",
+    "component",
+    "components",
+    "ui",
+    "framework",
+    "frontend"
+  ],
+  "main": "lib/warn.js",
+  "repository": "https://github.com/cncolder/antd-mobile-ssr",
+  "author": "colder",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "antd-mobile-web": "1.0.0-beta.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "fs-extra": "^2.0.0",
+    "glob": "^7.1.1",
+    "next": "2.0.0-beta.32"
+  },
+  "scripts": {
+    "build": "node ./build.js",
+    "prepublishOnly": "npm run build",
+    "release": "yarn version --no-git-tag-version && EDITOR=vim git release `node -e \"console.log(require('./package').version)\"` -c"
+  }
+}
