@@ -5,7 +5,7 @@ const child = require('child_process')
 
 fs.emptyDirSync('./lib')
 fs.copySync('./node_modules/antd-mobile-web/lib', './lib')
-glob.sync('./lib/**/*.svg').forEach(svg => {
+glob.sync('./lib/**/*.{css,less,svg}').forEach(svg => {
     console.log('[CLEAN] ' + svg)
     fs.removeSync(svg)
 })
